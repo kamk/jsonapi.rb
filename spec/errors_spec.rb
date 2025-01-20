@@ -38,7 +38,8 @@ RSpec.describe NotesController, type: :request do
             'source' => { 'pointer' => '' },
             'title' => 'Unprocessable Content',
             'detail' => nil,
-            'code' => nil
+            'code' => nil,
+            'meta' => nil
           }
         )
       end
@@ -65,7 +66,8 @@ RSpec.describe NotesController, type: :request do
             'source' => { 'pointer' => '/data/relationships/user' },
             'title' => 'Unprocessable Content',
             'detail' => expected_detail,
-            'code' => 'blank'
+            'code' => 'blank',
+            'meta' => nil
           }
         )
       end
@@ -87,21 +89,24 @@ RSpec.describe NotesController, type: :request do
               'source' => { 'pointer' => '/data/attributes/title' },
               'title' => 'Unprocessable Content',
               'detail' => 'Title is invalid',
-              'code' => 'invalid'
+              'code' => 'invalid',
+              'meta' => nil
             },
             {
               'status' => '422',
               'source' => { 'pointer' => '/data/attributes/title' },
               'title' => 'Unprocessable Content',
               'detail' => 'Title has typos',
-              'code' => 'invalid'
+              'code' => 'invalid',
+              'meta' => nil
             },
             {
               'status' => '422',
               'source' => { 'pointer' => '/data/attributes/quantity' },
               'title' => 'Unprocessable Content',
               'detail' => 'Quantity must be less than 100',
-              'code' => 'less_than'
+              'code' => 'less_than',
+              'meta' => nil
             }
           )
         end
@@ -123,7 +128,8 @@ RSpec.describe NotesController, type: :request do
               'source' => { 'pointer' => '' },
               'title' => 'Unprocessable Content',
               'detail' => 'Title has slurs',
-              'code' => 'title_has_slurs'
+              'code' => 'title_has_slurs',
+              'meta' => nil
             }
           )
         end
@@ -146,7 +152,8 @@ RSpec.describe NotesController, type: :request do
               'source' => { 'pointer' => '/data/attributes/title' },
               'title' => 'Unprocessable Content',
               'detail' => nil,
-              'code' => nil
+              'code' => nil,
+              'meta' => nil
             }
           )
         end
@@ -166,7 +173,8 @@ RSpec.describe NotesController, type: :request do
             'source' => nil,
             'title' => 'Not Found',
             'detail' => nil,
-            'code' => nil
+            'code' => nil,
+            'meta' => nil
           }
         )
       end
@@ -185,7 +193,8 @@ RSpec.describe NotesController, type: :request do
             'source' => nil,
             'title' => 'Internal Server Error',
             'detail' => nil,
-            'code' => nil
+            'code' => nil,
+            'meta' => nil
           }
         )
       end
