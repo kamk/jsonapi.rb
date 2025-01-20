@@ -29,7 +29,7 @@ module JSONAPI
     #
     # @return [Array]
     def jsonapi_pagination(resources)
-      links = { self: request.base_url + request.fullpath }
+      links = { self: request.base_url + CGI.unescape(request.fullpath) }
       pagination = jsonapi_pagination_meta(resources)
 
       return links if pagination.blank?
