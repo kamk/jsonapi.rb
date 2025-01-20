@@ -47,7 +47,7 @@ module JSONAPI
       render jsonapi_errors: [error], status: :not_found
     end
 
-    # Unprocessable entity (422) error handler callback
+    # Unprocessable Content (422) error handler callback
     #
     # @param exception [Exception] instance to handle
     # @return [String] JSONAPI error response

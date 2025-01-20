@@ -36,7 +36,7 @@ RSpec.describe NotesController, type: :request do
           {
             'status' => '422',
             'source' => { 'pointer' => '' },
-            'title' => 'Unprocessable Entity',
+            'title' => 'Unprocessable Content',
             'detail' => nil,
             'code' => nil
           }
@@ -63,7 +63,7 @@ RSpec.describe NotesController, type: :request do
           {
             'status' => '422',
             'source' => { 'pointer' => '/data/relationships/user' },
-            'title' => 'Unprocessable Entity',
+            'title' => 'Unprocessable Content',
             'detail' => expected_detail,
             'code' => 'blank'
           }
@@ -85,21 +85,21 @@ RSpec.describe NotesController, type: :request do
             {
               'status' => '422',
               'source' => { 'pointer' => '/data/attributes/title' },
-              'title' => 'Unprocessable Entity',
+              'title' => 'Unprocessable Content',
               'detail' => 'Title is invalid',
               'code' => 'invalid'
             },
             {
               'status' => '422',
               'source' => { 'pointer' => '/data/attributes/title' },
-              'title' => 'Unprocessable Entity',
+              'title' => 'Unprocessable Content',
               'detail' => 'Title has typos',
               'code' => 'invalid'
             },
             {
               'status' => '422',
               'source' => { 'pointer' => '/data/attributes/quantity' },
-              'title' => 'Unprocessable Entity',
+              'title' => 'Unprocessable Content',
               'detail' => 'Quantity must be less than 100',
               'code' => 'less_than'
             }
@@ -121,7 +121,7 @@ RSpec.describe NotesController, type: :request do
             {
               'status' => '422',
               'source' => { 'pointer' => '' },
-              'title' => 'Unprocessable Entity',
+              'title' => 'Unprocessable Content',
               'detail' => 'Title has slurs',
               'code' => 'title_has_slurs'
             }
@@ -144,7 +144,7 @@ RSpec.describe NotesController, type: :request do
             {
               'status' => '422',
               'source' => { 'pointer' => '/data/attributes/title' },
-              'title' => 'Unprocessable Entity',
+              'title' => 'Unprocessable Content',
               'detail' => nil,
               'code' => nil
             }

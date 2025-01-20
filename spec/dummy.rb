@@ -84,7 +84,6 @@ class UserSerializer
 end
 
 class Dummy < Rails::Application
-  secrets.secret_key_base = '_'
   config.hosts << 'www.example.com' if config.respond_to?(:hosts)
 
   routes.draw do
