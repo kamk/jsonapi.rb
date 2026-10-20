@@ -20,8 +20,8 @@ module JSONAPI
     end
 
     attribute :source do |object, params|
-      error_key = object.attribute
       model_serializer = params[:model_serializer]
+      error_key = model_serializer.run_key_transform(object.attribute)
       attrs = (model_serializer.attributes_to_serialize || {}).keys
       rels = (model_serializer.relationships_to_serialize || {}).keys
 
